@@ -5,6 +5,16 @@
           box-sizing: border-box;
 }
 
+*::-moz-selection {
+  background: rgba(201, 214, 223, 0.7);
+  color: rgba(82, 97, 107, 0.5);
+}
+
+*::selection {
+  background: rgba(201, 214, 223, 0.7);
+  color: rgba(82, 97, 107, 0.5);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -12,7 +22,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   cursor: none;
-  font-family: "Crimson Text", serif;
+  font-family: 'Crimson Text', serif;
 }
 
 .loader {
@@ -34,6 +44,20 @@ body {
   font-size: 200px;
 }
 
+@media (max-width: 1024px) {
+  .loader marquee {
+    font-size: 300px;
+    line-height: 300px;
+  }
+}
+
+@media (max-width: 680px) {
+  .loader marquee {
+    font-size: 200px;
+    line-height: 200px;
+  }
+}
+
 .loader .loader_intro {
   position: absolute;
   top: 50%;
@@ -48,7 +72,13 @@ body {
   text-transform: uppercase;
   font-weight: 200;
   color: #f0f5f9;
-  font-family: "Crimson Text";
+  font-family: 'Crimson Text';
+}
+
+@media (max-width: 680px) {
+  .loader .loader_intro-title {
+    font-size: 60px;
+  }
 }
 
 .loader .loader_intro-title .letter {
@@ -63,7 +93,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 100%;
-  z-index: 1;
+  z-index: 999;
   -webkit-transition: 0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity, 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) -webkit-transform;
   transition: 0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity, 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) -webkit-transform;
   transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
@@ -77,8 +107,14 @@ body {
           transform: scale(0.8);
 }
 
+@media (max-width: 1024px) {
+  .cursor {
+    display: none;
+  }
+}
+
 .cursor::before {
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
   position: absolute;
@@ -108,6 +144,12 @@ body {
   pointer-events: none;
   -webkit-transform: translate(4px, 4px);
           transform: translate(4px, 4px);
+}
+
+@media (max-width: 1024px) {
+  .cursor-follower {
+    display: none;
+  }
 }
 
 .container {
@@ -140,7 +182,7 @@ body {
 }
 
 .container .container::after {
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
   background: url("../image/noise.png");
@@ -153,6 +195,14 @@ body {
           box-sizing: border-box;
 }
 
+@media (max-width: 1024px) {
+  .container .text {
+    height: auto;
+    padding: 0% 10%;
+    padding-top: 20%;
+  }
+}
+
 .container .text h2 {
   margin: 0;
   font-size: 3rem;
@@ -162,11 +212,24 @@ body {
   color: #c9d6df;
 }
 
+@media (max-width: 680px) {
+  .container .text h2 {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+}
+
 .container .text h2 .line {
   margin-bottom: 8px;
   height: 56px;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 680px) {
+  .container .text h2 .line {
+    height: 36px;
+  }
 }
 
 .container .text h2 .line span {
@@ -177,7 +240,19 @@ body {
   width: 100%;
   height: 100%;
   margin: 50px auto;
-  display: "block" !important;
+  display: 'block' !important;
+}
+
+@media (max-width: 1024px) {
+  .container .text img {
+    height: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .container .text img {
+    margin: 30px auto;
+  }
 }
 
 .container .circular-text {
@@ -190,11 +265,17 @@ body {
   color: rgba(180, 25, 255, 0);
   font-size: 24px;
   font-weight: bolder;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
   z-index: 1;
+}
+
+@media (max-width: 680px) {
+  .container .circular-text {
+    font-size: 12px;
+  }
 }
 
 .container .main_title {
@@ -214,6 +295,12 @@ body {
   transition: transform 0.25s;
   transition: transform 0.25s, -webkit-transform 0.25s;
   will-change: transform;
+}
+
+@media (max-width: 680px) {
+  .container section {
+    width: 80%;
+  }
 }
 
 .container section div {
@@ -245,6 +332,7 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding: 0;
 }
 
 .container section div ul li {
